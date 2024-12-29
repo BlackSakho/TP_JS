@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .highlight {
+            background-color: yellow;
+            color: red;
+        }
+      </style>
+</head>
+<body>
+    
+
+    <p id="texte" class="marche">Ceci est un paragraphe</p>
+    <button id="changeStyle"> Changer le style</button>
+    
+  <script>
+   let texte = document.getElementById("texte");
+   let bouton = document.getElementById("changeStyle");
+
+   bouton.addEventListener("click",()=>{
+    texte.classList.toggle("highlight");
+   });
+  
+  </script>
+</body>
+</html>

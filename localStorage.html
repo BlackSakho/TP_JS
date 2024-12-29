@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulaire avec Local Storage</title>
+</head>
+<body>
+
+    <form id="monFormulaire">
+        <label for="nom">Nom :</label>
+        <input type="text" id="nom" name="nom"><br>
+
+        <label for="age">Âge :</label>
+        <input type="number" id="age" name="age"><br>
+
+        <button type="button" id="submitBtn">Soumettre</button>
+    </form>
+
+    <script>
+        let bouton = document.getElementById("submitBtn");
+
+        // Charger les données sauvegardées dans les champs au chargement de la page
+        document.getElementById("nom").value = localStorage.getItem("nom") || "";
+        document.getElementById("age").value = localStorage.getItem("age") || "";
+
+        // Sauvegarder les données dans le Local Storage lors du clic sur le bouton
+        bouton.addEventListener("click", () => {
+            let nom = document.getElementById("nom").value;
+            let age = document.getElementById("age").value;
+
+            if (nom === "" || age === "") {
+                alert("Veuillez remplir tous les champs.");
+            } else {
+                localStorage.setItem("nom", nom);
+                localStorage.setItem("age", age);
+                alert("Données sauvegardées !");
+            }
+        });
+    </script>
+
+</body>
+</html>

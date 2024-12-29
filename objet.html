@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        let livres ={
+            titre: "L'aventure parfaite",
+            auteur: "Taiba Sakho",
+            annee: 2024,
+
+            description: function(){
+                return "Le livre" +this.titre+ "par" +this.auteur+ "compte" +this.pages+ "pages."
+            }
+        };
+
+        
+
+        console.log(livres);
+
+        livres.pages =250;
+
+        console.log(livres.description());
+
+        console.log(livres);
+
+        console.log("Le livre", livres.titre, "est ecrit par", livres.auteur, "en" ,livres.annee,"et contient",livres.pages, "pages." );
+
+        
+
+    </script>
+</body>
+</html>

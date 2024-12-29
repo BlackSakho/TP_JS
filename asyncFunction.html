@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        async function faireAchat () {
+            try{
+                let achat = await new Promise((resolve, reject) => {
+                    setTimeout(()=>{
+
+                    let succes= true;
+                     if(succes){
+                        resolve("Achat effectué");
+        
+                     } else {
+                        reject ("Echec de l'achat");
+                     }
+                        
+                    }, 2000);
+
+                } );
+                console.log(achat);
+
+            } catch (erreur){
+                console.error(erreur);
+            }
+            
+        }
+
+        faireAchat();
+    </script>
+</body>
+</html>

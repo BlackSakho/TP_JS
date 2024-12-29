@@ -1,0 +1,39 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <button id="fetchBtn" >Recupérer les données utilisateur</button>
+    <div id="userData"></div>
+
+    <script>
+        let bouton = document.getElementById("fetchBtn");
+        let userDataDiv = document.getElementById("userData"); 
+
+     bouton.addEventListener("click", ()=>{
+
+        fetch("https://jsonplaceholder.typicode.com/users/9")
+        .then(response=>response.json())
+        .then(data=>{
+            userDataDiv.innerHTML = `
+            <h3> Nom: ${data.name}</h3>
+            <p> Email: ${data.email}</p>
+            <p> Téléphone: ${data.phone}</p>
+            `;
+        })
+        .catch(error => {
+                    console.error("Erreur :", error);
+                    userDataDiv.textContent = "Une erreur s'est produite lors de la récupération des données.";
+                });
+
+     });
+    
+    </script>
+
+</body>
+</html>

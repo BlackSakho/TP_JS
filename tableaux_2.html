@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let notes =[ 10, 15, 20, 13];
+        
+        notes.push(9);
+
+        let somme = 0 ;
+        for (let i = 0; i < notes.length; i++) {
+            somme += notes[i];
+        }
+
+        let moyenne = somme / notes.length;
+
+        
+        console.log("Les notes", notes);
+        console.log("La moyenne est de", moyenne);
+
+        
+    </script>
+</body>
+</html>

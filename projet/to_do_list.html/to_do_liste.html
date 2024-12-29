@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To do list</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <h1>Ma liste de tache</h1>
+    <input type="text" id="tacheInput" placeholder="Ajouter une tache">
+    <button id="ajouterBtn" class="btn btn-primary">Ajouter</button>
+
+    <ul id="listeTaches"></ul>
+
+    <script>
+        const ajouterBtn = document.getElementById("ajouterBtn");
+        const tacheInput = document.getElementById("tacheInput");
+        const listeTaches = document.getElementById("listeTaches");
+
+
+        //charger les taches au local storage
+        let taches= JSON.parse(localStorage.getItem("taches")) || [];
+        
+
+        function afficherTache() {
+
+            listeTaches.innerHTML = "";
+            taches.forEach((tache, index) => {
+                const li = document.createElement("li");
+                li.textContent = tache;
+          
+                
+                //bouton de suppression de la tache 
+                const supprimerBtn = document.createElement("button");
+                supprimerBtn.textContent = "Supprimer";
+                supprimerBtn.onclick = () => supprimerTache(index);
+                li.appendChild(supprimerBtn);
+                listeTaches.appendChild(li);
+
+
+                
+            });
+            
+        }
+
+        // Ajouter une nouvelle tâche
+        ajouterBtn.addEventListener("click", () => {
+            const tache = tacheInput.value.trim();
+            if (tache) {
+                taches.push(tache);
+                tacheInput.value = "";
+                localStorage.setItem("taches", JSON.stringify(taches));
+                afficherTache();
+            }
+        });
+
+        // Supprimer une tâche
+        function supprimerTache(index) {
+            taches.splice(index, 1);
+            localStorage.setItem("taches", JSON.stringify(taches));
+            afficherTache();
+        }
+
+        console.log(taches);
+        afficherTache();
+
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,62 @@
+/* style.css */
+
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    overflow: hidden;
+    position: relative;
+    background-size: cover;
+}
+
+/* Styles pour la div de fond */
+#background {
+    position: fixed; /* Fixe l'image à l'écran */
+    top: 0;
+    left: 0;
+    width: 100vw; /* S'assure que la largeur prend tout l'écran */
+    height: 100vh; /* S'assure que la hauteur prend tout l'écran */
+    background-size: cover; /* Couvre toute la zone sans déformation */
+    background-position: center center; /* Centrer l'image */
+    background-repeat: no-repeat; /* Ne répète pas l'image */
+    z-index: -1;
+}
+
+#quoteBox, #newQuoteBtn {
+    z-index: 1; /* Assure que le contenu est au-dessus de l'image de fond */
+}
+
+.fade {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 0.5s ease forwards;
+}
+
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+#newQuoteBtn {
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+    margin-top: 20px;
+    border-radius: 5px;
+}
+
+#newQuoteBtn:hover {
+    background-color: #45a049;
+}

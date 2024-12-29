@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let notes =[10, 12, 11, 9, 17, 14, 18];
+        let triples=notes.map((note) => note     * 3);
+
+        console.log(notes);
+        console.log(triples);
+
+        let sup15 =notes.filter((notee)=> notee > 15);
+        console.log(sup15);
+
+        let somme = notes.reduce((total, note) => total+ note, 0);
+        console.log(somme);
+    </script>
+</body>
+</html>

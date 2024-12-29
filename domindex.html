@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <div id="message">Bonjour, monde !</div>
+
+    <button id="bouton">Cliquez-moi</button>
+
+
+    <script>
+        let message = document.getElementById("message");
+console.log(message.textContent); // Affiche "Bonjour, monde !"
+
+   message.textContent = "Bonjour, Taiba !";
+   message.style.color = "green";
+
+
+   let nouveauParagraphe = document.createElement("p");
+nouveauParagraphe.textContent = "Ceci est un nouveau paragraphe.";
+document.body.appendChild(nouveauParagraphe);
+
+   
+let bouton = document.getElementById("bouton");
+bouton.addEventListener("click", () => {
+    alert("Bouton cliqué !");
+});
+
+
+
+    </script>
+
+</body>
+</html>
